@@ -7,8 +7,8 @@ let ownedCEOs = 0;
 const frontCoins = document.querySelector("#coins");
 
 const buyCharacter = () => {
-    if(coins > 99 && unlockedCharacters < link.length) {
-        coins -= 100;
+    if(coins > 999 && unlockedCharacters < link.length) {
+        coins -= 1000;
         unlockedCharacters += 1;
         let unlockedLink = "";
         for(let i = 0; i < unlockedCharacters; i++) {
