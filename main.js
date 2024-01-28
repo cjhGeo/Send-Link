@@ -1,5 +1,5 @@
 const link = "https://youtu.be/ZezKv3yCMno?si=88M4hG0Qh7D0sQ-g";
-let coins = 100;
+let coins = 1000;
 let unlockedCharacters = 0;
 let ownedWorkers = 0;
 let ownedEmployers = 0;
@@ -73,6 +73,7 @@ let checkStats = () => {
         ownedCEOs = Math.min(ownedCEOs, Number(document.querySelector("#ceos").innerHTML));
         document.querySelector("#ceos").innerHTML = ownedCEOs;
     }
+    console.log("checked!");
 }
 
 setInterval(checkStats, 10);
