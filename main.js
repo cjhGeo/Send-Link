@@ -1,10 +1,31 @@
-const link = "https://youtu.be/ZezKv3yCMno?si=88M4hG0Qh7D0sQ-g";
-let coins = 1000;
+let link = "https://youtu.be/ZezKv3yCMno?si=88M4hG0Qh7D0sQ-g";
+let coins = 100;
 let unlockedCharacters = 0;
 let ownedWorkers = 0;
 let ownedEmployers = 0;
 let ownedCEOs = 0;
 const frontCoins = document.querySelector("#coins");
+
+const changeEp = (event) => {
+    if(event.target.value == "ep1") {
+        link = "https://youtu.be/ZezKv3yCMno?si=88M4hG0Qh7D0sQ-g"
+    } else if(event.target.value == "ep2") {
+        link = "https://youtu.be/nuZBdwvZEdk?si=mMeWwA7SpJHetQ0o"
+    } else if(event.target.value == "ep3") {
+        link = "https://youtu.be/vnYROTY55yg?si=Fa2Cp80jek3UMeSC"
+    }
+
+    coins = 100;
+    frontCoins.innerHTML = 100;
+    unlockedCharacters = 0;
+    document.querySelector("#link").innerHTML = "";
+    ownedWorkers = 0;
+    document.querySelector("#workers").innerHTML = 0;
+    ownedEmployers = 0;
+    document.querySelector("#employers").innerHTML = 0;
+    ownedCEOs = 0;
+    document.querySelector("#ceos").innerHTML = 0;
+}
 
 const buyCharacter = () => {
     if(coins > 999 && unlockedCharacters < link.length) {
@@ -73,7 +94,6 @@ let checkStats = () => {
         ownedCEOs = Math.min(ownedCEOs, Number(document.querySelector("#ceos").innerHTML));
         document.querySelector("#ceos").innerHTML = ownedCEOs;
     }
-    console.log("checked!");
 }
 
 setInterval(checkStats, 10);
